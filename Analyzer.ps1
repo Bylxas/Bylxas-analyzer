@@ -19,11 +19,6 @@ $Banner = @"
   ██████╔╝   ██║   ███████╗██╔╝ ██╗██║  ██║███████║
   ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
-                         \    /\
-                          )  ( ')
-                         (  /  )
-                          \(__)|
-
 "@
 
 Write-Host $Banner -ForegroundColor Cyan
@@ -31,7 +26,7 @@ Write-Host ""
 Write-Host "                Made with " -ForegroundColor Gray -NoNewline
 Write-Host "♥ " -ForegroundColor Red -NoNewline
 Write-Host "by " -ForegroundColor Gray -NoNewline
-Write-Host "MeowTonynoh" -ForegroundColor Cyan
+Write-Host "Bylxas" -ForegroundColor Cyan
 Write-Host ""
 Write-Host ("━" * 76) -ForegroundColor DarkCyan
 Write-Host
@@ -1298,23 +1293,20 @@ Write-Host "  JVM issues:          " -ForegroundColor Gray -NoNewline; Write-Hos
 Write-Host
 Write-Rule "━" 76 Blue
 Write-Host ""
-Write-Host "  ✨ Analysis complete! Thanks for using Meow Mod Analyzer 🐱" -ForegroundColor Cyan
+Write-Host "  ✨ Analysis complete! Thanks for using Bylxas Mod Analyzer✨ " -ForegroundColor Cyan
 Write-Host ""
 Write-Host "  👤 Created by: " -ForegroundColor White -NoNewline
 Write-Host "🌟 " -ForegroundColor Cyan -NoNewline
-Write-Host "Tonynoh" -ForegroundColor Cyan
+Write-Host "Bylxas" -ForegroundColor Cyan
 Write-Host "  📱 My Socials: " -ForegroundColor White -NoNewline
 Write-Host "💬 " -ForegroundColor Blue -NoNewline
 Write-Host "Discord  : " -ForegroundColor Blue -NoNewline
-Write-Host "tonyboy90_" -ForegroundColor Blue
+Write-Host "Bylxas187" -ForegroundColor Blue
 Write-Host "                 " -NoNewline
 Write-Host "🔗 " -ForegroundColor DarkGray -NoNewline
 Write-Host "GitHub   : " -ForegroundColor DarkGray -NoNewline
-Write-Host "https://github.com/MeowTonynoh" -ForegroundColor DarkGray
+Write-Host "https://github.com/bylxas" -ForegroundColor DarkGray
 Write-Host "                 " -NoNewline
-Write-Host "🎥 " -ForegroundColor Red -NoNewline
-Write-Host "YouTube  : " -ForegroundColor Red -NoNewline
-Write-Host "tonynoh-07" -ForegroundColor Red
 Write-Host ""
 Write-Rule "━" 76 Blue
 Write-Host ""
