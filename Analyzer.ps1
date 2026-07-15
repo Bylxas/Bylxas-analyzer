@@ -222,7 +222,7 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "pedroisgayv", "ｐｅｄｒｏｉｓｇａｙｖ", "pedroisgayf", "ｐｅｄｒｏｉｓｇａｙｆ", "STORAGE_ESP_FILL",
     "ＳＴＯＲＡＧＥ＿ＥＳＰ＿ＦＩＬＬ", "TRACER_ESP_LINES", "ＴＲＡＣＥＲ＿ＥＳＰ＿ＬＩＮＥＳ", "autism_tracer_esp_lines",
     "ａｕｔｉｓｍ＿ｔｒａｃｅｒ＿ｅｓｐ＿ｌｉｎｅｓ", "AutismDupeRadar", "ＡｕｔｉｓｍＤｕｐｅＲａｄａｒ", "WurstClient", "ＷｕｒｓｔＣｌｉｅｎｔ",
-    "InputFaker", "ＩｎｐｕｔＦａｋｅｒ"
+    "InputFaker", "ＩｎｐｕｔＦａｋｅｒ", "target-info", "ｔａｒｇｅｔ－ｉｎｆｏ"
 
 )
 
