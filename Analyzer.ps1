@@ -101,7 +101,7 @@ $suspiciousPatterns = @(
     "ぶ.class", "ぷ.class", "た.class", "ね.class", "そ.class", "な.class", "ど.class", "ぐ.class",
     "ず.class", "で.class", "つ.class", "べ.class", "せ.class", "と.class", "み.class", "び.class",
     "す.class", "の.class", "ModuleStorageEsp", "AutismMacro.class", "AutismBlinkFakePlayer.class",
-    "wurstclient"
+    "wurstclient", "COMBAT", "Francium"
 
 )
 
@@ -222,7 +222,10 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "pedroisgayv", "ｐｅｄｒｏｉｓｇａｙｖ", "pedroisgayf", "ｐｅｄｒｏｉｓｇａｙｆ", "STORAGE_ESP_FILL",
     "ＳＴＯＲＡＧＥ＿ＥＳＰ＿ＦＩＬＬ", "TRACER_ESP_LINES", "ＴＲＡＣＥＲ＿ＥＳＰ＿ＬＩＮＥＳ", "autism_tracer_esp_lines",
     "ａｕｔｉｓｍ＿ｔｒａｃｅｒ＿ｅｓｐ＿ｌｉｎｅｓ", "AutismDupeRadar", "ＡｕｔｉｓｍＤｕｐｅＲａｄａｒ", "WurstClient", "ＷｕｒｓｔＣｌｉｅｎｔ",
-    "InputFaker", "ＩｎｐｕｔＦａｋｅｒ", "target-info", "ｔａｒｇｅｔ－ｉｎｆｏ"
+    "InputFaker", "ＩｎｐｕｔＦａｋｅｒ", "target-info", "ｔａｒｇｅｔ－ｉｎｆｏ", "auto pearl", "ａｕｔｏ　ｐｅａｒｌ",
+    "Middle Click Pearl", "Ｍｉｄｄｌｅ　Ｃｌｉｃｋ　Ｐｅａｒｌ", "Auto Retotem", "Ａｕｔｏ　Ｒｅｔｏｔｅｍ", "forceTotem",
+    "ｆｏｒｃｅＴｏｔｅｍ", "Auto WTap", "Ａｕｔｏ　ＷＴａｐ", "Self Destruct", "Ｓｅｌｆ　Ｄｅｓｔｒｕｃｔ", "Auto Dtap",
+    "Ａｕｔｏ　Ｄｔａｐ"
 
 )
 
