@@ -229,7 +229,7 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "ｆｏｒｃｅＴｏｔｅｍ", "Auto WTap", "Ａｕｔｏ　ＷＴａｐ", "Self Destruct", "Ｓｅｌｆ　Ｄｅｓｔｒｕｃｔ", "Auto Dtap",
     "Ａｕｔｏ　Ｄｔａｐ", "Blink", "Ｂｌｉｎｋ", "EntityESP", "ＥｎｔｉｔｙＥＳＰ", "AutoTool", "ＡｕｔｏＴｏｏｌ", "InvisEsp",
     "ＩｎｖｉｓＥｓｐ", "LamaEsp", "ＬａｍａＥｓｐ", "PistonEsp", "ＰｉｓｔｏｎＥｓｐ", "SkeletonEsp", "ＳｋｅｌｅｔｏｎＥｓｐ",
-    "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ"
+    "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ", "radium/loader", "ｒａｄｉｕｍ／ｌｏａｄｅｒ"
 
 )
 
