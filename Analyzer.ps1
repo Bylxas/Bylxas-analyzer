@@ -217,7 +217,8 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "argon client", "Asteria", "AsteriaClient", "asteria client", "Prestige", "PrestigeClient",
     "prestige client", "prestigeclient.vip", "gypsy", "GypsyClient", "gypsy client", "Xenon",
     "XenonClient", "xenon client", "GrimClient", "grim client", "phantom-refmap.json",
-    "dqrkis.xyz", "Dqrkis Client", "clickcrystals", "ｃｌｉｃｋｃｒｙｓｔａｌｓ"
+    "dqrkis.xyz", "Dqrkis Client", "clickcrystals", "ｃｌｉｃｋｃｒｙｓｔａｌｓ", "KrLoader", "ＫｒＬｏａｄｅｒ",
+    "pedroisgayv", "ｐｅｄｒｏｉｓｇａｙｖ", "pedroisgayf", "ｐｅｄｒｏｉｓｇａｙｆ"
 
 )
 
