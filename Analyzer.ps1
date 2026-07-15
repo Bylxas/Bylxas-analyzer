@@ -101,7 +101,9 @@ $suspiciousPatterns = @(
     "ぶ.class", "ぷ.class", "た.class", "ね.class", "そ.class", "な.class", "ど.class", "ぐ.class",
     "ず.class", "で.class", "つ.class", "べ.class", "せ.class", "と.class", "み.class", "び.class",
     "す.class", "の.class", "ModuleStorageEsp", "AutismMacro.class", "AutismBlinkFakePlayer.class",
-    "wurstclient", "COMBAT", "Francium", "ZenithDLC", "ZenithClient"
+    "wurstclient", "COMBAT", "Francium", "ZenithDLC", "ZenithClient",
+    "AdvancedStashFinder$1.class", "ChunkFinder.class", "BreachSwap.class", "AnchorMacro.class",
+    "KeyPearl.class", "SwordPlaceObsidian.class"
 
 )
 
@@ -225,7 +227,9 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "InputFaker", "ＩｎｐｕｔＦａｋｅｒ", "target-info", "ｔａｒｇｅｔ－ｉｎｆｏ", "auto pearl", "ａｕｔｏ　ｐｅａｒｌ",
     "Middle Click Pearl", "Ｍｉｄｄｌｅ　Ｃｌｉｃｋ　Ｐｅａｒｌ", "Auto Retotem", "Ａｕｔｏ　Ｒｅｔｏｔｅｍ", "forceTotem",
     "ｆｏｒｃｅＴｏｔｅｍ", "Auto WTap", "Ａｕｔｏ　ＷＴａｐ", "Self Destruct", "Ｓｅｌｆ　Ｄｅｓｔｒｕｃｔ", "Auto Dtap",
-    "Ａｕｔｏ　Ｄｔａｐ", "Blink", "Ｂｌｉｎｋ", "EntityESP", "ＥｎｔｉｔｙＥＳＰ", "AutoTool", "ＡｕｔｏＴｏｏｌ"
+    "Ａｕｔｏ　Ｄｔａｐ", "Blink", "Ｂｌｉｎｋ", "EntityESP", "ＥｎｔｉｔｙＥＳＰ", "AutoTool", "ＡｕｔｏＴｏｏｌ", "InvisEsp",
+    "ＩｎｖｉｓＥｓｐ", "LamaEsp", "ＬａｍａＥｓｐ", "PistonEsp", "ＰｉｓｔｏｎＥｓｐ", "SkeletonEsp", "ＳｋｅｌｅｔｏｎＥｓｐ",
+    "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ"
 
 )
 
