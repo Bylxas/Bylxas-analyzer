@@ -21,7 +21,7 @@ $Banner = @"
 
 "@
 
-Write-Host $Banner -ForegroundColor Magenta
+Write-Host $Banner -ForegroundColor Cyan
 Write-Host ""
 Write-Host "                Made with " -ForegroundColor Gray -NoNewline
 Write-Host "♥ " -ForegroundColor Red -NoNewline
