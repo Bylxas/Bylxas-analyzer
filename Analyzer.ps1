@@ -100,7 +100,7 @@ $suspiciousPatterns = @(
     "dev.gambleclient", "obfuscatedAuth", "phantom-refmap.json", "xyz.greaj", "じ.class", "ふ.class",
     "ぶ.class", "ぷ.class", "た.class", "ね.class", "そ.class", "な.class", "ど.class", "ぐ.class",
     "ず.class", "で.class", "つ.class", "べ.class", "せ.class", "と.class", "み.class", "び.class",
-    "す.class", "の.class"
+    "す.class", "の.class", "ModuleStorageEsp", "AutismMacro.class", "AutismBlinkFakePlayer.class"
 
 )
 
@@ -218,7 +218,9 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "prestige client", "prestigeclient.vip", "gypsy", "GypsyClient", "gypsy client", "Xenon",
     "XenonClient", "xenon client", "GrimClient", "grim client", "phantom-refmap.json",
     "dqrkis.xyz", "Dqrkis Client", "clickcrystals", "ｃｌｉｃｋｃｒｙｓｔａｌｓ", "KrLoader", "ＫｒＬｏａｄｅｒ",
-    "pedroisgayv", "ｐｅｄｒｏｉｓｇａｙｖ", "pedroisgayf", "ｐｅｄｒｏｉｓｇａｙｆ"
+    "pedroisgayv", "ｐｅｄｒｏｉｓｇａｙｖ", "pedroisgayf", "ｐｅｄｒｏｉｓｇａｙｆ", "STORAGE_ESP_FILL",
+    "ＳＴＯＲＡＧＥ＿ＥＳＰ＿ＦＩＬＬ", "TRACER_ESP_LINES", "ＴＲＡＣＥＲ＿ＥＳＰ＿ＬＩＮＥＳ", "autism_tracer_esp_lines",
+    "ａｕｔｉｓｍ＿ｔｒａｃｅｒ＿ｅｓｐ＿ｌｉｎｅｓ", "AutismDupeRadar", "ＡｕｔｉｓｍＤｕｐｅＲａｄａｒ"
 
 )
 
