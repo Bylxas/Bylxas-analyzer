@@ -108,7 +108,8 @@ $suspiciousPatterns = @(
     "FastLadderPlus", "SpiderPlus", "SpeedPlus", "ItemFrameEsp", "ItemHighlightPlus",
     "AntiVanish.class", "ArrowDmg.class", "ChorusExploit.class", "KnockbackPlus.class",
     "SkeletonEsp.class", "FDPClient", "liquidbounce.features", "baritone", "aresclient",
-    "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares"
+    "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares", "NoBreakDelay.class",
+    "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS"
 
 )
 
@@ -237,7 +238,7 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ", "radium/loader", "ｒａｄｉｕｍ／ｌｏａｄｅｒ",
     "xraybruteforce", "ｘｒａｙｂｒｕｔｅｆｏｒｃｅ", "auto-bed-trap", "ａｕｔｏ－ｂｅｄ－ｔｒａｐ", "auto-pot", "ａｕｔｏ－ｐｏｔ",
     "auto-tnt", "ａｕｔｏ－ｔｎｔ", "boat-phase", "ｂｏａｔ－ｐｈａｓｅ", "knockback-plus", "ｋｎｏｃｋｂａｃｋ－ｐｌｕｓ", "Esp",
-    "Ｅｓｐ"
+    "Ｅｓｐ", "obsidian-switch", "ｏｂｓｉｄｉａｎ－ｓｗｉｔｃｈ"
 
 )
 
