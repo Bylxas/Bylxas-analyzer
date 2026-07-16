@@ -107,7 +107,8 @@ $suspiciousPatterns = @(
     "NoFallPlus", "NoSlowPlus", "XrayBruteforce", "Meteor+", "SafeMine", "VelocityPlus",
     "FastLadderPlus", "SpiderPlus", "SpeedPlus", "ItemFrameEsp", "ItemHighlightPlus",
     "AntiVanish.class", "ArrowDmg.class", "ChorusExploit.class", "KnockbackPlus.class",
-    "SkeletonEsp.class", "FDPClient", "liquidbounce.features"
+    "SkeletonEsp.class", "FDPClient", "liquidbounce.features", "baritone", "aresclient",
+    "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares"
 
 )
 
