@@ -103,7 +103,11 @@ $suspiciousPatterns = @(
     "す.class", "の.class", "ModuleStorageEsp", "AutismMacro.class", "AutismBlinkFakePlayer.class",
     "wurstclient", "COMBAT", "Francium", "ZenithDLC", "ZenithClient",
     "AdvancedStashFinder$1.class", "ChunkFinder.class", "BreachSwap.class", "AnchorMacro.class",
-    "KeyPearl.class", "SwordPlaceObsidian.class"
+    "KeyPearl.class", "SwordPlaceObsidian.class", "meteorplus", "AntiBotPlus", "ElytraFlyPlus",
+    "NoFallPlus", "NoSlowPlus", "XrayBruteforce", "Meteor+", "SafeMine", "VelocityPlus",
+    "FastLadderPlus", "SpiderPlus", "SpeedPlus", "ItemFrameEsp", "ItemHighlightPlus",
+    "AntiVanish.class", "ArrowDmg.class", "ChorusExploit.class", "KnockbackPlus.class",
+    "SkeletonEsp.class"
 
 )
 
@@ -229,7 +233,9 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "ｆｏｒｃｅＴｏｔｅｍ", "Auto WTap", "Ａｕｔｏ　ＷＴａｐ", "Self Destruct", "Ｓｅｌｆ　Ｄｅｓｔｒｕｃｔ", "Auto Dtap",
     "Ａｕｔｏ　Ｄｔａｐ", "Blink", "Ｂｌｉｎｋ", "EntityESP", "ＥｎｔｉｔｙＥＳＰ", "AutoTool", "ＡｕｔｏＴｏｏｌ", "InvisEsp",
     "ＩｎｖｉｓＥｓｐ", "LamaEsp", "ＬａｍａＥｓｐ", "PistonEsp", "ＰｉｓｔｏｎＥｓｐ", "SkeletonEsp", "ＳｋｅｌｅｔｏｎＥｓｐ",
-    "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ", "radium/loader", "ｒａｄｉｕｍ／ｌｏａｄｅｒ"
+    "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ", "radium/loader", "ｒａｄｉｕｍ／ｌｏａｄｅｒ",
+    "xraybruteforce", "ｘｒａｙｂｒｕｔｅｆｏｒｃｅ", "auto-bed-trap", "ａｕｔｏ－ｂｅｄ－ｔｒａｐ", "auto-pot", "ａｕｔｏ－ｐｏｔ",
+    "auto-tnt", "ａｕｔｏ－ｔｎｔ", "boat-phase", "ｂｏａｔ－ｐｈａｓｅ", "knockback-plus", "ｋｎｏｃｋｂａｃｋ－ｐｌｕｓ"
 
 )
 
