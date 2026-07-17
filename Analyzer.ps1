@@ -110,7 +110,8 @@ $suspiciousPatterns = @(
     "SkeletonEsp.class", "FDPClient", "liquidbounce.features", "baritone", "aresclient",
     "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares", "NoBreakDelay.class",
     "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class",
-    "NameProtect", "RegionMap", "water.client", "Water Client"
+    "NameProtect", "RegionMap", "water.client", "Water Client", "Fake Payments", "Paper Rig",
+    "zelith", "Zelith Client"
 
 )
 
@@ -241,7 +242,12 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "auto-tnt", "ａｕｔｏ－ｔｎｔ", "boat-phase", "ｂｏａｔ－ｐｈａｓｅ", "knockback-plus", "ｋｎｏｃｋｂａｃｋ－ｐｌｕｓ", "Esp",
     "Ｅｓｐ", "obsidian-switch", "ｏｂｓｉｄｉａｎ－ｓｗｉｔｃｈ", "AntiTrap", "ＡｎｔｉＴｒａｐ", "ChunkFinder",
     "ＣｈｕｎｋＦｉｎｄｅｒ", "FakeRoles", "ＦａｋｅＲｏｌｅｓ", "Fast Place", "Ｆａｓｔ　Ｐｌａｃｅ", "SpawnerProtect",
-    "ＳｐａｗｎｅｒＰｒｏｔｅｃｔ", "ＳｐｅａｒＳｗａｐ", "TabDetector", "ＴａｂＤｅｔｅｃｔｏｒ"
+    "ＳｐａｗｎｅｒＰｒｏｔｅｃｔ", "ＳｐｅａｒＳｗａｐ", "TabDetector", "ＴａｂＤｅｔｅｃｔｏｒ", "Anti Trap", "Ａｎｔｉ　Ｔｒａｐ",
+    "Chunk Finder", "Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Fake Pay", "Ｆａｋｅ　Ｐａｙ", "Fake Roles", "Ｆａｋｅ　Ｒｏｌｅｓ",
+    "Fake Scoreboard", "Ｆａｋｅ　Ｓｃｏｒｅｂｏａｒｄ", "Growth Finder", "Ｇｒｏｗｔｈ　Ｆｉｎｄｅｒ", "Region Map",
+    "Ｒｅｇｉｏｎ　Ｍａｐ", "Spawner Finder", "Ｓｐａｗｎｅｒ　Ｆｉｎｄｅｒ", "Stash Finder", "Ｓｔａｓｈ　Ｆｉｎｄｅｒ",
+    "Sus Chunk Finder", "Ｓｕｓ　Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Name Protect", "Ｎａｍｅ　Ｐｒｏｔｅｃｔ", "Amethyst ESP",
+    "Ａｍｅｔｈｙｓｔ　ＥＳＰ"
 
 )
 
