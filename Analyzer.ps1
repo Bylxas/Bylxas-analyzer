@@ -111,7 +111,8 @@ $suspiciousPatterns = @(
     "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares", "NoBreakDelay.class",
     "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class",
     "NameProtect", "RegionMap", "water.client", "Water Client", "Fake Payments", "Paper Rig",
-    "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class"
+    "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class",
+    "Essence Client", "EssenceClient.", "essenceclient"
 
 )
 
