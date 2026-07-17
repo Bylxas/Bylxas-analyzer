@@ -111,7 +111,7 @@ $suspiciousPatterns = @(
     "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares", "NoBreakDelay.class",
     "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class",
     "NameProtect", "RegionMap", "water.client", "Water Client", "Fake Payments", "Paper Rig",
-    "zelith", "Zelith Client"
+    "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class"
 
 )
 
@@ -247,7 +247,10 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "Fake Scoreboard", "Ｆａｋｅ　Ｓｃｏｒｅｂｏａｒｄ", "Growth Finder", "Ｇｒｏｗｔｈ　Ｆｉｎｄｅｒ", "Region Map",
     "Ｒｅｇｉｏｎ　Ｍａｐ", "Spawner Finder", "Ｓｐａｗｎｅｒ　Ｆｉｎｄｅｒ", "Stash Finder", "Ｓｔａｓｈ　Ｆｉｎｄｅｒ",
     "Sus Chunk Finder", "Ｓｕｓ　Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Name Protect", "Ｎａｍｅ　Ｐｒｏｔｅｃｔ", "Amethyst ESP",
-    "Ａｍｅｔｈｙｓｔ　ＥＳＰ"
+    "Ａｍｅｔｈｙｓｔ　ＥＳＰ", "AutoWindcharge", "ＡｕｔｏＷｉｎｄｃｈａｒｇｅ", "automine", "ａｕｔｏｍｉｎｅ", "freecam",
+    "ｆｒｅｅｃａｍ", "hitboxes", "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "reach", "ｒｅａｃｈ", "nameProtect",
+    "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter", "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ",
+    "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ"
 
 )
 
