@@ -109,7 +109,7 @@ $suspiciousPatterns = @(
     "AntiVanish.class", "ArrowDmg.class", "ChorusExploit.class", "KnockbackPlus.class",
     "SkeletonEsp.class", "FDPClient", "liquidbounce.features", "baritone", "aresclient",
     "SCAFFOLD", "SELF_TRAP", "ANTI_BED_AURA", "Ares", "NoBreakDelay.class",
-    "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS"
+    "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class"
 
 )
 
