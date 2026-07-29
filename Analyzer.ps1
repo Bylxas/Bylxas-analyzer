@@ -112,7 +112,7 @@ $suspiciousPatterns = @(
     "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class",
     "NameProtect", "RegionMap", "water.client", "Water Client", "Fake Payments", "Paper Rig",
     "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class",
-    "Essence Client", "EssenceClient.", "essenceclient"
+    "Essence Client", "EssenceClient.", "essenceclient", "prestige.client"
 
 )
 
