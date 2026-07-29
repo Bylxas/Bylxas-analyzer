@@ -251,7 +251,8 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "Ａｍｅｔｈｙｓｔ　ＥＳＰ", "AutoWindcharge", "ＡｕｔｏＷｉｎｄｃｈａｒｇｅ", "automine", "ａｕｔｏｍｉｎｅ", "freecam",
     "ｆｒｅｅｃａｍ", "hitboxes", "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "reach", "ｒｅａｃｈ", "nameProtect",
     "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter", "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ",
-    "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ", "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly", "Ｂｙ　ＨｉｔｓＯｎｌｙ"
+    "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ", "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly",
+    "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ"
 
 )
 
