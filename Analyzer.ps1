@@ -240,19 +240,18 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "ＩｎｖｉｓＥｓｐ", "LamaEsp", "ＬａｍａＥｓｐ", "PistonEsp", "ＰｉｓｔｏｎＥｓｐ", "SkeletonEsp", "ＳｋｅｌｅｔｏｎＥｓｐ",
     "VineEsp", "ＶｉｎｅＥｓｐ", "radium.loader", "ｒａｄｉｕｍ．ｌｏａｄｅｒ", "radium/loader", "ｒａｄｉｕｍ／ｌｏａｄｅｒ",
     "xraybruteforce", "ｘｒａｙｂｒｕｔｅｆｏｒｃｅ", "auto-bed-trap", "ａｕｔｏ－ｂｅｄ－ｔｒａｐ", "auto-pot", "ａｕｔｏ－ｐｏｔ",
-    "auto-tnt", "ａｕｔｏ－ｔｎｔ", "boat-phase", "ｂｏａｔ－ｐｈａｓｅ", "knockback-plus", "ｋｎｏｃｋｂａｃｋ－ｐｌｕｓ", "Esp",
-    "Ｅｓｐ", "obsidian-switch", "ｏｂｓｉｄｉａｎ－ｓｗｉｔｃｈ", "AntiTrap", "ＡｎｔｉＴｒａｐ", "ChunkFinder",
-    "ＣｈｕｎｋＦｉｎｄｅｒ", "FakeRoles", "ＦａｋｅＲｏｌｅｓ", "Fast Place", "Ｆａｓｔ　Ｐｌａｃｅ", "SpawnerProtect",
-    "ＳｐａｗｎｅｒＰｒｏｔｅｃｔ", "ＳｐｅａｒＳｗａｐ", "TabDetector", "ＴａｂＤｅｔｅｃｔｏｒ", "Anti Trap", "Ａｎｔｉ　Ｔｒａｐ",
-    "Chunk Finder", "Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Fake Pay", "Ｆａｋｅ　Ｐａｙ", "Fake Roles", "Ｆａｋｅ　Ｒｏｌｅｓ",
-    "Fake Scoreboard", "Ｆａｋｅ　Ｓｃｏｒｅｂｏａｒｄ", "Growth Finder", "Ｇｒｏｗｔｈ　Ｆｉｎｄｅｒ", "Region Map",
-    "Ｒｅｇｉｏｎ　Ｍａｐ", "Spawner Finder", "Ｓｐａｗｎｅｒ　Ｆｉｎｄｅｒ", "Stash Finder", "Ｓｔａｓｈ　Ｆｉｎｄｅｒ",
-    "Sus Chunk Finder", "Ｓｕｓ　Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Name Protect", "Ｎａｍｅ　Ｐｒｏｔｅｃｔ", "Amethyst ESP",
-    "Ａｍｅｔｈｙｓｔ　ＥＳＰ", "AutoWindcharge", "ＡｕｔｏＷｉｎｄｃｈａｒｇｅ", "automine", "ａｕｔｏｍｉｎｅ", "freecam",
-    "ｆｒｅｅｃａｍ", "hitboxes", "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "reach", "ｒｅａｃｈ", "nameProtect",
-    "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter", "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ",
-    "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ", "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly",
-    "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ"
+    "auto-tnt", "ａｕｔｏ－ｔｎｔ", "boat-phase", "ｂｏａｔ－ｐｈａｓｅ", "knockback-plus", "ｋｎｏｃｋｂａｃｋ－ｐｌｕｓ", "Ｅｓｐ",
+    "obsidian-switch", "ｏｂｓｉｄｉａｎ－ｓｗｉｔｃｈ", "AntiTrap", "ＡｎｔｉＴｒａｐ", "ChunkFinder", "ＣｈｕｎｋＦｉｎｄｅｒ",
+    "FakeRoles", "ＦａｋｅＲｏｌｅｓ", "Fast Place", "Ｆａｓｔ　Ｐｌａｃｅ", "SpawnerProtect", "ＳｐａｗｎｅｒＰｒｏｔｅｃｔ",
+    "ＳｐｅａｒＳｗａｐ", "TabDetector", "ＴａｂＤｅｔｅｃｔｏｒ", "Anti Trap", "Ａｎｔｉ　Ｔｒａｐ", "Chunk Finder",
+    "Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Fake Pay", "Ｆａｋｅ　Ｐａｙ", "Fake Roles", "Ｆａｋｅ　Ｒｏｌｅｓ", "Fake Scoreboard",
+    "Ｆａｋｅ　Ｓｃｏｒｅｂｏａｒｄ", "Growth Finder", "Ｇｒｏｗｔｈ　Ｆｉｎｄｅｒ", "Region Map", "Ｒｅｇｉｏｎ　Ｍａｐ",
+    "Spawner Finder", "Ｓｐａｗｎｅｒ　Ｆｉｎｄｅｒ", "Stash Finder", "Ｓｔａｓｈ　Ｆｉｎｄｅｒ", "Sus Chunk Finder",
+    "Ｓｕｓ　Ｃｈｕｎｋ　Ｆｉｎｄｅｒ", "Name Protect", "Ｎａｍｅ　Ｐｒｏｔｅｃｔ", "Amethyst ESP", "Ａｍｅｔｈｙｓｔ　ＥＳＰ",
+    "AutoWindcharge", "ＡｕｔｏＷｉｎｄｃｈａｒｇｅ", "automine", "ａｕｔｏｍｉｎｅ", "freecam", "ｆｒｅｅｃａｍ", "hitboxes",
+    "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "ｒｅａｃｈ", "nameProtect", "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter",
+    "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ", "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ",
+    "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly", "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ"
 
 )
 
