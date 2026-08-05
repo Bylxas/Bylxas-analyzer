@@ -112,7 +112,7 @@ $suspiciousPatterns = @(
     "GlowingEntities.class", "ElytraSwitch.class", "RailSwap.class", "MACROS", "FoureClient.class",
     "NameProtect", "RegionMap", "water.client", "Water Client", "Fake Payments", "Paper Rig",
     "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class",
-    "Essence Client", "EssenceClient.", "essenceclient", "prestige.client"
+    "Essence Client", "EssenceClient.", "essenceclient", "prestige.client", "dev.virel", "orchard"
 
 )
 
@@ -251,7 +251,8 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "AutoWindcharge", "ＡｕｔｏＷｉｎｄｃｈａｒｇｅ", "automine", "ａｕｔｏｍｉｎｅ", "freecam", "ｆｒｅｅｃａｍ", "hitboxes",
     "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "ｒｅａｃｈ", "nameProtect", "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter",
     "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ", "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ",
-    "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly", "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ"
+    "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly", "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ",
+    "dev.virel", "ｄｅｖ．ｖｉｒｅｌ", "orchard", "ｏｒｃｈａｒｄ"
 
 )
 
