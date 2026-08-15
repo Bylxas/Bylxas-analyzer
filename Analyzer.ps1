@@ -75,6 +75,19 @@ if ($mcProcess) {
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
+# ── Hit-location display configuration ─────────────────────────────────
+# How many hit paths are shown per match at most before the rest is
+# collapsed into "+N more". Keeps the console output readable.
+$script:MaxPathsShown = 2
+$script:MaxPathLength = 64
+
+function Format-HitPath {
+    param([string]$Path)
+    if ($Path.Length -le $script:MaxPathLength) { return $Path }
+    $half = [math]::Floor(($script:MaxPathLength - 3) / 2)
+    return $Path.Substring(0, $half) + "..." + $Path.Substring($Path.Length - $half)
+}
+
 $suspiciousPatterns = @(
     "AimAssist", "AnchorTweaks", "AutoAnchor", "AutoCrystal", "AutoDoubleHand",
     "JDWP.VirtualMachine.AllModules", "AutoHitCrystal", "AutoPot", "AutoTotem", "AutoArmor",
@@ -322,26 +335,38 @@ $fullwidthRegex = [regex]::new(
     [System.Text.RegularExpressions.RegexOptions]::Compiled
 )
 
+# ── Helper: record a hit + its location in a Dictionary<string,List[string]> ──
+function Add-Hit {
+    param(
+        [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]$Dict,
+        [string]$Key,
+        [string]$Path
+    )
+    if (-not $Dict.ContainsKey($Key)) {
+        $Dict[$Key] = [System.Collections.Generic.List[string]]::new()
+    }
+    if (-not $Dict[$Key].Contains($Path)) {
+        [void]$Dict[$Key].Add($Path)
+    }
+}
+
 function Invoke-ModScan {
     param([string]$FilePath)
 
-    $foundPatterns  = [System.Collections.Generic.HashSet[string]]::new()
-    $foundStrings   = [System.Collections.Generic.HashSet[string]]::new()
-    $foundFullwidth = [System.Collections.Generic.HashSet[string]]::new()
+    # Values are now Dictionaries: matched text -> list of hit paths (inside the JAR)
+    $foundPatterns     = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
+    $foundStrings      = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
+    $foundFullwidthRaw = [System.Collections.Generic.List[object]]::new()
 
     try {
         $archive = [System.IO.Compression.ZipFile]::OpenRead($FilePath)
 
-        foreach ($entry in $archive.Entries) {
-            foreach ($m in $patternRegex.Matches($entry.FullName)) {
-                [void]$foundPatterns.Add($m.Value)
-            }
-        }
-
         $allEntries    = [System.Collections.Generic.List[object]]::new()
         $innerArchives = [System.Collections.Generic.List[object]]::new()
 
-        foreach ($e in $archive.Entries) { $allEntries.Add($e) }
+        foreach ($e in $archive.Entries) {
+            $allEntries.Add([PSCustomObject]@{ Entry = $e; Path = $e.FullName })
+        }
 
         foreach ($nj in ($archive.Entries | Where-Object { $_.FullName -match "^META-INF/jars/.+\.jar$" })) {
             try {
@@ -351,12 +376,23 @@ function Invoke-ModScan {
                 $ms.Position = 0
                 $iz = [System.IO.Compression.ZipArchive]::new($ms, [System.IO.Compression.ZipArchiveMode]::Read)
                 $innerArchives.Add($iz)
-                foreach ($ie in $iz.Entries) { $allEntries.Add($ie) }
+                $njName = [System.IO.Path]::GetFileName($nj.FullName)
+                foreach ($ie in $iz.Entries) {
+                    $allEntries.Add([PSCustomObject]@{ Entry = $ie; Path = "$njName!$($ie.FullName)" })
+                }
             } catch { }
         }
 
-        foreach ($entry in $allEntries) {
-            $name = $entry.FullName
+        # Pattern hits in the file/path name itself (including nested JARs)
+        foreach ($item in $allEntries) {
+            foreach ($m in $patternRegex.Matches($item.Path)) {
+                Add-Hit $foundPatterns $m.Value $item.Path
+            }
+        }
+
+        foreach ($item in $allEntries) {
+            $entry = $item.Entry
+            $name  = $item.Path
 
             if ($name -match '\.(class|json)$' -or $name -match 'MANIFEST\.MF') {
                 try {
@@ -368,15 +404,15 @@ function Invoke-ModScan {
                     $ascii = [System.Text.Encoding]::ASCII.GetString($bytes)
                     $utf8  = [System.Text.Encoding]::UTF8.GetString($bytes)
 
-                    foreach ($m in $patternRegex.Matches($ascii)) { [void]$foundPatterns.Add($m.Value) }
+                    foreach ($m in $patternRegex.Matches($ascii)) { Add-Hit $foundPatterns $m.Value $name }
 
                     foreach ($s in $cheatStringSet) {
-                        if ($ascii.Contains($s)) { [void]$foundStrings.Add($s); continue }
-                        if ($utf8.Contains($s))  { [void]$foundStrings.Add($s) }
+                        if ($ascii.Contains($s)) { Add-Hit $foundStrings $s $name; continue }
+                        if ($utf8.Contains($s))  { Add-Hit $foundStrings $s $name }
                     }
 
                     foreach ($m in $fullwidthRegex.Matches($utf8)) {
-                        [void]$foundFullwidth.Add($m.Value)
+                        $foundFullwidthRaw.Add([PSCustomObject]@{ Value = $m.Value; Path = $name })
                     }
                 } catch { }
             }
@@ -389,8 +425,10 @@ function Invoke-ModScan {
     $fwCheatPool = @($script:cheatStrings | Where-Object {
         $_ -cmatch "[\uFF21-\uFF3A\uFF41-\uFF5A\uFF10-\uFF19]"
     })
-    $resolvedFullwidth = [System.Collections.Generic.HashSet[string]]::new()
-    foreach ($fw in @($foundFullwidth)) {
+
+    $resolvedFullwidth = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
+    foreach ($item in $foundFullwidthRaw) {
+        $fw = $item.Value
         if ($fw.Length -lt 3) { continue }
         $bestMatch = $null
         foreach ($cs in $fwCheatPool) {
@@ -400,22 +438,28 @@ function Invoke-ModScan {
                 }
             }
         }
+        $key = $null
         if ($null -ne $bestMatch) {
-            [void]$resolvedFullwidth.Add($bestMatch)
+            $key = $bestMatch
         } elseif ($fw.Length -ge 6) {
-            [void]$resolvedFullwidth.Add($fw)
+            $key = $fw
         }
+        if ($key) { Add-Hit $resolvedFullwidth $key $item.Path }
     }
-    $resolved = @($resolvedFullwidth)
-    $finalFullwidth = [System.Collections.Generic.HashSet[string]]::new()
-    foreach ($fw in $resolved) {
+
+    # Merge redundant fullwidth keys (ones contained within a longer match)
+    $keys = @($resolvedFullwidth.Keys)
+    $finalFullwidth = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
+    foreach ($fw in $keys) {
         $isRedundant = $false
-        foreach ($other in $resolved) {
-            if ($fw.Length -lt $other.Length -and $other.Contains($fw)) {
+        foreach ($other in $keys) {
+            if ($fw -ne $other -and $fw.Length -lt $other.Length -and $other.Contains($fw)) {
                 $isRedundant = $true; break
             }
         }
-        if (-not $isRedundant) { [void]$finalFullwidth.Add($fw) }
+        if (-not $isRedundant) {
+            $finalFullwidth[$fw] = $resolvedFullwidth[$fw]
+        }
     }
 
     return @{ Patterns = $foundPatterns; Strings = $foundStrings; Fullwidth = $finalFullwidth }
@@ -789,34 +833,64 @@ function Write-SectionHeader {
     Write-Host ""
 }
 
+# Compact line for a single hit, including up to $script:MaxPathsShown locations
+function Write-HitLine {
+    param(
+        [string]$Label,
+        [System.Collections.Generic.List[string]]$Paths,
+        [ConsoleColor]$LabelColor,
+        [ConsoleColor]$BarColor
+    )
+    Write-Host "  │    " -ForegroundColor $BarColor -NoNewline
+    Write-Host $Label -ForegroundColor $LabelColor
+
+    $shown = $Paths | Select-Object -First $script:MaxPathsShown
+    foreach ($p in $shown) {
+        Write-Host "  │       ↳ " -ForegroundColor DarkGray -NoNewline
+        Write-Host (Format-HitPath $p) -ForegroundColor Gray
+    }
+    if ($Paths.Count -gt $script:MaxPathsShown) {
+        $rest = $Paths.Count - $script:MaxPathsShown
+        Write-Host "  │       ↳ " -ForegroundColor DarkGray -NoNewline
+        Write-Host "... +$rest more location(s)" -ForegroundColor DarkGray
+    }
+}
+
 function Write-SuspiciousCard {
     param($Mod)
+
+    # Total number of unique hit locations, for the header line
+    $totalLocations = 0
+    foreach ($k in $Mod.Patterns.Keys)  { $totalLocations += $Mod.Patterns[$k].Count }
+    foreach ($k in $Mod.Strings.Keys)   { if (-not $Mod.Patterns.ContainsKey($k)) { $totalLocations += $Mod.Strings[$k].Count } }
+    if ($Mod.Fullwidth) {
+        foreach ($k in $Mod.Fullwidth.Keys) { $totalLocations += $Mod.Fullwidth[$k].Count }
+    }
 
     Write-Host ("  " + ("─" * 70)) -ForegroundColor DarkRed
     Write-Host "  │ " -ForegroundColor DarkRed -NoNewline
     Write-Host " FLAGGED " -ForegroundColor White -BackgroundColor DarkRed -NoNewline
     Write-Host "  " -NoNewline
-    Write-Host $Mod.FileName -ForegroundColor Yellow
+    Write-Host $Mod.FileName -ForegroundColor Yellow -NoNewline
+    Write-Host "  ($totalLocations location(s))" -ForegroundColor DarkGray
     Write-Host ("  │ " + ("─" * 66)) -ForegroundColor DarkRed
 
     if ($Mod.Patterns.Count -gt 0) {
         Write-Host "  │" -ForegroundColor DarkRed
         Write-Host "  │  " -ForegroundColor DarkRed -NoNewline
         Write-Host "PATTERNS" -ForegroundColor DarkGray
-        foreach ($p in ($Mod.Patterns | Sort-Object)) {
-            Write-Host "  │    " -ForegroundColor DarkRed -NoNewline
-            Write-Host $p -ForegroundColor Red
+        foreach ($key in ($Mod.Patterns.Keys | Sort-Object)) {
+            Write-HitLine -Label $key -Paths $Mod.Patterns[$key] -LabelColor Red -BarColor DarkRed
         }
     }
 
-    $uniqueStrings = $Mod.Strings | Where-Object { $Mod.Patterns -notcontains $_ } | Sort-Object
-    if ($uniqueStrings.Count -gt 0) {
+    $uniqueStringKeys = @($Mod.Strings.Keys | Where-Object { -not $Mod.Patterns.ContainsKey($_) } | Sort-Object)
+    if ($uniqueStringKeys.Count -gt 0) {
         Write-Host "  │" -ForegroundColor DarkRed
         Write-Host "  │  " -ForegroundColor DarkRed -NoNewline
         Write-Host "STRINGS" -ForegroundColor DarkGray
-        foreach ($s in $uniqueStrings) {
-            Write-Host "  │    " -ForegroundColor DarkRed -NoNewline
-            Write-Host $s -ForegroundColor DarkYellow
+        foreach ($key in $uniqueStringKeys) {
+            Write-HitLine -Label $key -Paths $Mod.Strings[$key] -LabelColor DarkYellow -BarColor DarkRed
         }
     }
 
@@ -824,9 +898,8 @@ function Write-SuspiciousCard {
         Write-Host "  │" -ForegroundColor DarkRed
         Write-Host "  │  " -ForegroundColor DarkRed -NoNewline
         Write-Host "FULLWIDTH UNICODE" -ForegroundColor DarkGray
-        foreach ($fw in ($Mod.Fullwidth | Sort-Object)) {
-            Write-Host "  │    " -ForegroundColor DarkRed -NoNewline
-            Write-Host "FULLWIDTH: $fw" -ForegroundColor Cyan
+        foreach ($key in ($Mod.Fullwidth.Keys | Sort-Object)) {
+            Write-HitLine -Label "FULLWIDTH: $key" -Paths $Mod.Fullwidth[$key] -LabelColor Cyan -BarColor DarkRed
         }
     }
 
@@ -996,9 +1069,9 @@ foreach ($jar in $jarFiles) {
 
     if ($result.Patterns.Count -gt 0 -or $result.Strings.Count -gt 0 -or $result.Fullwidth.Count -gt 0) {
         $suspiciousMods += [PSCustomObject]@{
-            FileName = $jar.Name
-            Patterns = $result.Patterns
-            Strings  = $result.Strings
+            FileName  = $jar.Name
+            Patterns  = $result.Patterns
+            Strings   = $result.Strings
             Fullwidth = $result.Fullwidth
         }
         $verifiedMods = $verifiedMods | Where-Object { $_.FileName -ne $jar.Name }
@@ -1191,4 +1264,3 @@ Write-Rule "━" 76 Blue
 Write-Host ""
 Write-Host "Press any key to exit..." -ForegroundColor DarkGray
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
- 
