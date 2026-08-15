@@ -848,7 +848,7 @@ function Write-HitLine {
     }
     if ($Paths.Count -gt $script:MaxPathsShown) {
         $rest = $Paths.Count - $script:MaxPathsShown
-        Write-Host "  │       ↳ " -ForegroundColor DarkMagenta -NoNewline
+        Write-Host "  │       ↳ " -ForegroundColor DarkGray -NoNewline
         Write-Host "... +$rest more location(s)" -ForegroundColor DarkGray
     }
 }
