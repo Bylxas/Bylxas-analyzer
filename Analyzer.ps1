@@ -75,9 +75,6 @@ if ($mcProcess) {
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-# ── Hit-location display configuration ─────────────────────────────────
-# How many hit paths are shown per match at most before the rest is
-# collapsed into "+N more". Keeps the console output readable.
 $script:MaxPathsShown = 2
 $script:MaxPathLength = 64
 
@@ -335,7 +332,7 @@ $fullwidthRegex = [regex]::new(
     [System.Text.RegularExpressions.RegexOptions]::Compiled
 )
 
-# ── Helper: record a hit + its location in a Dictionary<string,List[string]> ──
+
 function Add-Hit {
     param(
         [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]$Dict,
@@ -353,7 +350,7 @@ function Add-Hit {
 function Invoke-ModScan {
     param([string]$FilePath)
 
-    # Values are now Dictionaries: matched text -> list of hit paths (inside the JAR)
+
     $foundPatterns     = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
     $foundStrings      = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
     $foundFullwidthRaw = [System.Collections.Generic.List[object]]::new()
@@ -383,7 +380,7 @@ function Invoke-ModScan {
             } catch { }
         }
 
-        # Pattern hits in the file/path name itself (including nested JARs)
+        
         foreach ($item in $allEntries) {
             foreach ($m in $patternRegex.Matches($item.Path)) {
                 Add-Hit $foundPatterns $m.Value $item.Path
@@ -447,7 +444,7 @@ function Invoke-ModScan {
         if ($key) { Add-Hit $resolvedFullwidth $key $item.Path }
     }
 
-    # Merge redundant fullwidth keys (ones contained within a longer match)
+   
     $keys = @($resolvedFullwidth.Keys)
     $finalFullwidth = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
     foreach ($fw in $keys) {
@@ -833,7 +830,7 @@ function Write-SectionHeader {
     Write-Host ""
 }
 
-# Compact line for a single hit, including up to $script:MaxPathsShown locations
+
 function Write-HitLine {
     param(
         [string]$Label,
@@ -859,7 +856,7 @@ function Write-HitLine {
 function Write-SuspiciousCard {
     param($Mod)
 
-    # Total number of unique hit locations, for the header line
+    
     $totalLocations = 0
     foreach ($k in $Mod.Patterns.Keys)  { $totalLocations += $Mod.Patterns[$k].Count }
     foreach ($k in $Mod.Strings.Keys)   { if (-not $Mod.Patterns.ContainsKey($k)) { $totalLocations += $Mod.Strings[$k].Count } }
