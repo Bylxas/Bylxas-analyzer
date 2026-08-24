@@ -263,7 +263,10 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "ｈｉｔｂｏｘｅｓ", "autoTotem", "ａｕｔｏＴｏｔｅｍ", "ｒｅａｃｈ", "nameProtect", "ｎａｍｅＰｒｏｔｅｃｔ", "autoMaceCounter",
     "ａｕｔｏＭａｃｅＣｏｕｎｔｅｒ", "pearlCatch", "ｐｅａｒｌＣａｔｃｈ", "bypassModule", "ｂｙｐａｓｓＭｏｄｕｌｅ",
     "findTotemSlots", "ｆｉｎｄＴｏｔｅｍＳｌｏｔｓ", "By HitsOnly", "Ｂｙ　ＨｉｔｓＯｎｌｙ", "Aim Assist", "Ａｉｍ　Ａｓｓｉｓｔ",
-    "dev.virel", "ｄｅｖ．ｖｉｒｅｌ", "orchard", "ｏｒｃｈａｒｄ"
+    "dev.virel", "ｄｅｖ．ｖｉｒｅｌ", "orchard", "ｏｒｃｈａｒｄ", "ｔｒｉｇｇｅｒ＿ｂｏｔ", "ａｉｍ＿ａｓｓｉｓｔ", "anchor_macro",
+    "ａｎｃｈｏｒ＿ｍａｃｒｏ", "auto_obsidian", "ａｕｔｏ＿ｏｂｓｉｄｉａｎ", "shield_break_no_cooldown",
+    "ｓｈｉｅｌｄ＿ｂｒｅａｋ＿ｎｏ＿ｃｏｏｌｄｏｗｎ", "auto_mace", "ａｕｔｏ＿ｍａｃｅ", "ｓｔｕｎ＿ｓｌａｍ", "auto_swap_anchor",
+    "ａｕｔｏ＿ｓｗａｐ＿ａｎｃｈｏｒ"
 
 )
 
