@@ -6,7 +6,7 @@ Clear-Host
 
 $currentFont = (Get-ItemProperty "HKCU:\Console" -ErrorAction SilentlyContinue).FaceName
 if ($currentFont -notmatch "NSimSun|Gothic|Noto") {
-    Write-Host "  Tip: Tip: Also check the verified mods." -ForegroundColor DarkRed
+    Write-Host "  Tip: Also check the verified mods." -ForegroundColor DarkRed
     Write-Host
 }
 
