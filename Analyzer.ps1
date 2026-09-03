@@ -124,7 +124,7 @@ $suspiciousPatterns = @(
     "zelith", "Zelith Client", "AntiCheatProfile", "ScreenshareBypass", "SilentAim.class",
     "Essence Client", "EssenceClient.", "essenceclient", "prestige.client", "dev.virel", "orchard",
     "Ranush", "CartOptimizer", "cartoptimizer", "CartOptimizerClient", "cyemer", "Nyrex Client",
-    "dev.nyrex"
+    "dev.nyrex", "LIQUIDIFY", "CrystalMacro", "Panic"
 
 )
 
@@ -274,7 +274,9 @@ $cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal"
     "Ｈ．ｏｒｉｚｏｎｔａｌ Ａｉｍ Ｓｐｅｅｄ", "Ｈ．ｏｒｉｚｏｎｔａｌ　Ａｉｍ　Ｓｐｅｅｄ", "Ｖ．ｅｒｔｉｃａｌ Ａｉｍ Ｓｐｅｅｄ", "Ｖ．ｅｒｔｉｃａｌ　Ａｉｍ　Ｓｐｅｅｄ",
     "Ａ．ｕｔｏ", "Ｍ．ａｃｅ Ｐｒｉｏｒｉｔｙ", "Ｍ．ａｃｅ　Ｐｒｉｏｒｉｔｙ", "Ａ．ｕｔｏ ＤＴＡＰ", "Ａ．ｕｔｏ　ＤＴＡＰ", "Ｓ．ｔｏｐ ｏｎ ｋｉｌｌ",
     "Ｓ．ｔｏｐ　ｏｎ　ｋｉｌｌ", "Ｂ．ｒｅａｋ ｄｅｌａｙ", "Ｂ．ｒｅａｋ　ｄｅｌａｙ", "Ａ．ｉｍ Ａｓｓｉｓｔ", "Ａ．ｉｍ　Ａｓｓｉｓｔ",
-    "Ｖ．ｉｓｉｂｉｌｉｔｙ Ｃｈｅｃｋ", "Ｖ．ｉｓｉｂｉｌｉｔｙ　Ｃｈｅｃｋ", "AimTarget", "ＡｉｍＴａｒｇｅｔ"
+    "Ｖ．ｉｓｉｂｉｌｉｔｙ Ｃｈｅｃｋ", "Ｖ．ｉｓｉｂｉｌｉｔｙ　Ｃｈｅｃｋ", "AimTarget", "ＡｉｍＴａｒｇｅｔ", "FLY", "ＦＬＹ", "MaceTpAura",
+    "ＭａｃｅＴｐＡｕｒａ", "PearlCatchMacro", "ＰｅａｒｌＣａｔｃｈＭａｃｒｏ", "PingSpoof", "ＰｉｎｇＳｐｏｏｆ", "ThemisNoFall",
+    "ＴｈｅｍｉｓＮｏＦａｌｌ", "SpearMace", "ＳｐｅａｒＭａｃｅ", "ShieldDrain$Target", "ＳｈｉｅｌｄＤｒａｉｎ＄Ｔａｒｇｅｔ"
 
 )
 
