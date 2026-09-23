@@ -295,13 +295,12 @@ function Get-FileSHA1 {
 }
 
 
-$knownCheatHashes = @{
-    "Meteorclient" = @("647caeafcce5ae6898905ba45b18c677f9f02450", "ed1e7e19ee58e9292721d09a50b94f6f8054da08", "aad41b19053e78101c1d1fee375da276f813a8f6")
+"Meteorclient" = @("647caeafcce5ae6898905ba45b18c677f9f02450", "ed1e7e19ee58e9292721d09a50b94f6f8054da08", "aad41b19053e78101c1d1fee375da276f813a8f6")
     "Aurora Client" = @("891070c09403e3ac210678a262e088db37255b56", "f519a4841f0d51b12f7b65f517a7ff36ba7c2d55")
 
 }
 
-# Flaches Lookup (Hash -> Client-Name) für O(1)-Prüfung pro JAR, einmalig aus obiger Liste gebaut
+
 $cheatHashLookup = @{}
 foreach ($entry in $knownCheatHashes.GetEnumerator()) {
     foreach ($h in $entry.Value) {
@@ -383,6 +382,7 @@ function Invoke-ModScan {
     $foundPatterns     = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
     $foundStrings      = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
     $foundFullwidthRaw = [System.Collections.Generic.List[object]]::new()
+    $foundHashMatches  = [System.Collections.Generic.Dictionary[string,System.Collections.Generic.List[string]]]::new()
 
     try {
         $archive = [System.IO.Compression.ZipFile]::OpenRead($FilePath)
@@ -444,6 +444,26 @@ function Invoke-ModScan {
             }
         }
 
+        
+        if ($cheatHashLookup.Count -gt 0) {
+            $sha1Alg = [System.Security.Cryptography.SHA1]::Create()
+            foreach ($item in $allEntries) {
+                $entry = $item.Entry
+                $name  = $item.Path
+                if ($entry.Length -eq 0) { continue }
+                try {
+                    $es = $entry.Open()
+                    $entryHashBytes = $sha1Alg.ComputeHash($es)
+                    $es.Close()
+                    $entryHash = [BitConverter]::ToString($entryHashBytes) -replace '-', ''
+                    if ($cheatHashLookup.ContainsKey($entryHash)) {
+                        Add-Hit $foundHashMatches $cheatHashLookup[$entryHash] $name
+                    }
+                } catch { }
+            }
+            $sha1Alg.Dispose()
+        }
+
         foreach ($ia in $innerArchives) { try { $ia.Dispose() } catch { } }
         $archive.Dispose()
     } catch { }
@@ -488,7 +508,7 @@ function Invoke-ModScan {
         }
     }
 
-    return @{ Patterns = $foundPatterns; Strings = $foundStrings; Fullwidth = $finalFullwidth }
+    return @{ Patterns = $foundPatterns; Strings = $foundStrings; Fullwidth = $finalFullwidth; HashMatches = $foundHashMatches }
 }
 
 function Invoke-ObfuscationScan {
@@ -1102,7 +1122,25 @@ foreach ($jar in $jarFiles) {
         continue
     }
 
+    if ($knownCheatMods | Where-Object { $_.FileName -eq $jar.Name }) {
+        continue
+    }
+
     $result = Invoke-ModScan -FilePath $jar.FullName
+
+    if ($result.HashMatches.Count -gt 0) {
+        foreach ($cheatName in $result.HashMatches.Keys) {
+            $knownCheatMods += [PSCustomObject]@{
+                CheatName = $cheatName
+                FileName  = $jar.Name
+                FilePath  = $jar.FullName
+                Hash      = ""
+            }
+        }
+        $verifiedMods   = $verifiedMods   | Where-Object { $_.FileName -ne $jar.Name }
+        $suspiciousMods = $suspiciousMods | Where-Object { $_.FileName -ne $jar.Name }
+        continue
+    }
 
     if ($result.Patterns.Count -gt 0 -or $result.Strings.Count -gt 0 -or $result.Fullwidth.Count -gt 0) {
         $suspiciousMods += [PSCustomObject]@{
