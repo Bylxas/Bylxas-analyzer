@@ -128,7 +128,8 @@ $suspiciousPatterns = @(
 
 )
 
-$cheatStrings = @(    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal", "JDWP.VirtualMachine.AllModules",
+$cheatStrings = @(
+    "AutoCrystal", "autocrystal", "auto crystal", "cw crystal", "JDWP.VirtualMachine.AllModules",
     "dontPlaceCrystal", "dontBreakCrystal", "AutoHitCrystal", "autohitcrystal",
     "canPlaceCrystalServer", "healPotSlot", "ＡｕｔｏＣｒｙｓｔａｌ", "Ａｕｔｏ Ｃｒｙｓｔａｌ", "ＡｕｔｏＨｉｔＣｒｙｓｔａｌ",
     "AutoAnchor", "autoanchor", "auto anchor", "DoubleAnchor", "HasAnchor", "anchortweaks",
@@ -295,18 +296,8 @@ function Get-FileSHA1 {
 
 
 $knownCheatHashes = @{
-    "Dqrkis Client"          = @("67346368972ABCDEF1234567890ABCDEF123456")
-    "Meteor (custom build)"  = @("AB12CD34EF56789012345678901234567890ABCD")
-    "Impact Client"          = @("1122334455667788990011223344556677889900")
-    "LiquidBounce"           = @("FFEEDDCCBBAA00998877665544332211FFEEDDCC")
-}
+    "Meteorclient" = @("ed1e7e19ee58e9292721d09a50b94f6f8054da08", "546564546546", "5465645654565")
 
-
-$cheatHashLookup = @{}
-foreach ($entry in $knownCheatHashes.GetEnumerator()) {
-    foreach ($h in $entry.Value) {
-        $cheatHashLookup[$h] = $entry.Key
-    }
 }
 
 function Get-DownloadSource {
@@ -1044,9 +1035,9 @@ foreach ($jar in $jarFiles) {
 
     $hash = Get-FileSHA1 -Path $jar.FullName
 
-    if ($hash -and $cheatHashLookup.ContainsKey($hash)) {
+    if ($hash -and $knownCheatHashes.ContainsKey($hash)) {
         $knownCheatMods += [PSCustomObject]@{
-            CheatName = $cheatHashLookup[$hash]
+            CheatName = $knownCheatHashes[$hash]
             FileName  = $jar.Name
             FilePath  = $jar.FullName
             Hash      = $hash
@@ -1181,18 +1172,6 @@ if ($jvmFlags.Count -gt 0) {
 
 Write-Host "`r$(' ' * 100)`r" -NoNewline
 
-if ($knownCheatMods.Count -gt 0) {
-    Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
-    Write-Rule "─" 76 DarkGray
-    foreach ($mod in $knownCheatMods) {
-        Write-Host "  ☠ " -ForegroundColor Red -NoNewline
-        Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
-        Write-Host " → " -ForegroundColor Gray -NoNewline
-        Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
-    }
-    Write-Host ""
-}
-
 if ($verifiedMods.Count -gt 0) {
     Write-SectionHeader -Title "VERIFIED MODS" -Count $verifiedMods.Count -DotColor Green -CountColor Green
     Write-Rule "─" 76 DarkGray
@@ -1279,6 +1258,18 @@ if ($jvmFlags.Count -gt 0) {
     }
     Write-Host "  │" -ForegroundColor DarkYellow
     Write-Host ("  " + ("─" * 70)) -ForegroundColor DarkYellow
+    Write-Host ""
+}
+
+if ($knownCheatMods.Count -gt 0) {
+    Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
+    Write-Rule "─" 76 DarkGray
+    foreach ($mod in $knownCheatMods) {
+        Write-Host "  ⚠  " -ForegroundColor Red -NoNewline
+        Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
+        Write-Host " → " -ForegroundColor Gray -NoNewline
+        Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
+    }
     Write-Host ""
 }
 
