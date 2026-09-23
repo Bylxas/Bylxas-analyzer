@@ -293,6 +293,14 @@ function Get-FileSHA1 {
     return (Get-FileHash -Path $Path -Algorithm SHA1).Hash
 }
 
+
+$knownCheatHashes = @{
+    "67346368972ABCDEF1234567890ABCDEF123456" = "Dqrkis Client"
+    "647caeafcce5ae6898905ba45b18c677f9f02450" = "Meteor (custom build)"
+    "1122334455667788990011223344556677889900" = "Impact Client"
+    "FFEEDDCCBBAA00998877665544332211FFEEDDCC" = "LiquidBounce"
+}
+
 function Get-DownloadSource {
     param([string]$Path)
     $zoneData = Get-Content -Raw -Stream Zone.Identifier $Path -ErrorAction SilentlyContinue
@@ -988,6 +996,7 @@ function Write-ObfuscationCard {
     Write-Host ""
 }
 
+$knownCheatMods  = @()
 $verifiedMods    = @()
 $unknownMods     = @()
 $suspiciousMods  = @()
@@ -1026,6 +1035,16 @@ foreach ($jar in $jarFiles) {
     Write-Host "`r[$spinner] Verifying: $idx/$totalFiles - $($jar.Name)" -ForegroundColor Yellow -NoNewline
 
     $hash = Get-FileSHA1 -Path $jar.FullName
+
+    if ($hash -and $knownCheatHashes.ContainsKey($hash)) {
+        $knownCheatMods += [PSCustomObject]@{
+            CheatName = $knownCheatHashes[$hash]
+            FileName  = $jar.Name
+            FilePath  = $jar.FullName
+            Hash      = $hash
+        }
+        continue
+    }
 
     if ($hash) {
         $modrinthData = Query-Modrinth -Hash $hash
@@ -1154,6 +1173,18 @@ if ($jvmFlags.Count -gt 0) {
 
 Write-Host "`r$(' ' * 100)`r" -NoNewline
 
+if ($knownCheatMods.Count -gt 0) {
+    Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
+    Write-Rule "─" 76 DarkGray
+    foreach ($mod in $knownCheatMods) {
+        Write-Host "  ☠ " -ForegroundColor Red -NoNewline
+        Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
+        Write-Host " → " -ForegroundColor Gray -NoNewline
+        Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
+    }
+    Write-Host ""
+}
+
 if ($verifiedMods.Count -gt 0) {
     Write-SectionHeader -Title "VERIFIED MODS" -Count $verifiedMods.Count -DotColor Green -CountColor Green
     Write-Rule "─" 76 DarkGray
@@ -1246,6 +1277,7 @@ if ($jvmFlags.Count -gt 0) {
 Write-Host "📊 SUMMARY" -ForegroundColor Cyan
 Write-Rule "━" 76 Blue
 Write-Host "  Total files scanned: " -ForegroundColor Gray -NoNewline; Write-Host "$totalFiles"                   -ForegroundColor White
+Write-Host "  Known cheat hashes:  " -ForegroundColor Gray -NoNewline; Write-Host "$($knownCheatMods.Count)"      -ForegroundColor Red
 Write-Host "  Verified mods:       " -ForegroundColor Gray -NoNewline; Write-Host "$($verifiedMods.Count)"        -ForegroundColor Green
 Write-Host "  Unknown mods:        " -ForegroundColor Gray -NoNewline; Write-Host "$($unknownMods.Count)"         -ForegroundColor Yellow
 Write-Host "  Suspicious mods:     " -ForegroundColor Gray -NoNewline; Write-Host "$($suspiciousMods.Count)"      -ForegroundColor Red
