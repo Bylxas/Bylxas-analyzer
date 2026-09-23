@@ -300,6 +300,14 @@ $knownCheatHashes = @{
 
 }
 
+# Flaches Lookup (Hash -> Client-Name) für O(1)-Prüfung pro JAR, einmalig aus obiger Liste gebaut
+$cheatHashLookup = @{}
+foreach ($entry in $knownCheatHashes.GetEnumerator()) {
+    foreach ($h in $entry.Value) {
+        $cheatHashLookup[$h] = $entry.Key
+    }
+}
+
 function Get-DownloadSource {
     param([string]$Path)
     $zoneData = Get-Content -Raw -Stream Zone.Identifier $Path -ErrorAction SilentlyContinue
@@ -1035,9 +1043,9 @@ foreach ($jar in $jarFiles) {
 
     $hash = Get-FileSHA1 -Path $jar.FullName
 
-    if ($hash -and $knownCheatHashes.ContainsKey($hash)) {
+    if ($hash -and $cheatHashLookup.ContainsKey($hash)) {
         $knownCheatMods += [PSCustomObject]@{
-            CheatName = $knownCheatHashes[$hash]
+            CheatName = $cheatHashLookup[$hash]
             FileName  = $jar.Name
             FilePath  = $jar.FullName
             Hash      = $hash
