@@ -297,11 +297,10 @@ function Get-FileSHA1 {
 
 $knownCheatHashes = @{
     "Meteorclient" = @("647caeafcce5ae6898905ba45b18c677f9f02450", "546564546546", "5465645654565")
-    "Aurora Client" = @("891070c09403e3ac210678a262e088db37255b56", "f519a4841f0d51b12f7b65f517a7ff36ba7c2d55")
 
 }
 
-
+# Flaches Lookup (Hash -> Client-Name) für O(1)-Prüfung pro JAR, einmalig aus obiger Liste gebaut
 $cheatHashLookup = @{}
 foreach ($entry in $knownCheatHashes.GetEnumerator()) {
     foreach ($h in $entry.Value) {
@@ -445,6 +444,9 @@ function Invoke-ModScan {
             }
         }
 
+        # Datei-Hash-Check: jede einzelne Datei in der JAR (auch in verschachtelten JARs) gegen
+        # $cheatHashLookup prüfen — erkennt umbenannte/neu gepackte Cheat-Module, auch wenn der
+        # Gesamt-Hash der äußeren JAR nicht mehr matcht.
         if ($cheatHashLookup.Count -gt 0) {
             $sha1Alg = [System.Security.Cryptography.SHA1]::Create()
             foreach ($item in $allEntries) {
@@ -1137,8 +1139,8 @@ foreach ($jar in $jarFiles) {
                 Hash      = ""
             }
         }
-        $verifiedMods   = $verifiedMods   | Where-Object { $_.FileName -ne $jar.Name }
-        $suspiciousMods = $suspiciousMods | Where-Object { $_.FileName -ne $jar.Name }
+        $verifiedMods = @($verifiedMods | Where-Object { $_.FileName -ne $jar.Name })
+        $suspiciousMods = @($suspiciousMods | Where-Object { $_.FileName -ne $jar.Name })
         continue
     }
 
@@ -1149,7 +1151,7 @@ foreach ($jar in $jarFiles) {
             Strings   = $result.Strings
             Fullwidth = $result.Fullwidth
         }
-        $verifiedMods = $verifiedMods | Where-Object { $_.FileName -ne $jar.Name }
+        $verifiedMods = @($verifiedMods | Where-Object { $_.FileName -ne $jar.Name })
     }
 }
 
@@ -1176,8 +1178,8 @@ foreach ($jar in $jarFiles) {
             FileName = $jar.Name
             Flags    = $bypassFlags
         }
-        $verifiedMods = $verifiedMods | Where-Object { $_.FileName -ne $jar.Name }
-        $unknownMods  = $unknownMods  | Where-Object { $_.FileName -ne $jar.Name }
+        $verifiedMods = @($verifiedMods | Where-Object { $_.FileName -ne $jar.Name })
+        $unknownMods = @($unknownMods | Where-Object { $_.FileName -ne $jar.Name })
     }
 }
 
@@ -1201,7 +1203,7 @@ foreach ($jar in $jarFiles) {
                 FileName = $jar.Name
                 Flags    = $obfFlags
             }
-            $verifiedMods = $verifiedMods | Where-Object { $_.FileName -ne $jar.Name }
+            $verifiedMods = @($verifiedMods | Where-Object { $_.FileName -ne $jar.Name })
         }
     }
 }
