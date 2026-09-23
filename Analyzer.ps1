@@ -297,6 +297,7 @@ function Get-FileSHA1 {
 
 $knownCheatHashes = @{
     "Meteorclient" = @("647caeafcce5ae6898905ba45b18c677f9f02450", "546564546546", "5465645654565")
+    "Aurora Client" = @("891070c09403e3ac210678a262e088db37255b56", "f519a4841f0d51b12f7b65f517a7ff36ba7c2d55")
 
 }
 
