@@ -1266,7 +1266,7 @@ if ($knownCheatMods.Count -gt 0) {
     Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
     Write-Rule "─" 76 DarkGray
     foreach ($mod in $knownCheatMods) {
-        Write-Host "  ⚠ " -ForegroundColor Red -NoNewline
+        Write-Host "  ⚠  " -ForegroundColor Red -NoNewline
         Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
         Write-Host " → " -ForegroundColor Gray -NoNewline
         Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
