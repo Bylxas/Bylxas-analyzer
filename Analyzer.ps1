@@ -1173,18 +1173,6 @@ if ($jvmFlags.Count -gt 0) {
 
 Write-Host "`r$(' ' * 100)`r" -NoNewline
 
-if ($knownCheatMods.Count -gt 0) {
-    Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
-    Write-Rule "─" 76 DarkGray
-    foreach ($mod in $knownCheatMods) {
-        Write-Host "  ☠ " -ForegroundColor Red -NoNewline
-        Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
-        Write-Host " → " -ForegroundColor Gray -NoNewline
-        Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
-    }
-    Write-Host ""
-}
-
 if ($verifiedMods.Count -gt 0) {
     Write-SectionHeader -Title "VERIFIED MODS" -Count $verifiedMods.Count -DotColor Green -CountColor Green
     Write-Rule "─" 76 DarkGray
@@ -1271,6 +1259,18 @@ if ($jvmFlags.Count -gt 0) {
     }
     Write-Host "  │" -ForegroundColor DarkYellow
     Write-Host ("  " + ("─" * 70)) -ForegroundColor DarkYellow
+    Write-Host ""
+}
+
+if ($knownCheatMods.Count -gt 0) {
+    Write-SectionHeader -Title "KNOWN CHEAT (HASH MATCH)" -Count $knownCheatMods.Count -DotColor Red -CountColor Red
+    Write-Rule "─" 76 DarkGray
+    foreach ($mod in $knownCheatMods) {
+        Write-Host "  ⚠ " -ForegroundColor Red -NoNewline
+        Write-Host "$($mod.CheatName)" -ForegroundColor White -NoNewline
+        Write-Host " → " -ForegroundColor Gray -NoNewline
+        Write-Host "$($mod.FileName)" -ForegroundColor DarkGray
+    }
     Write-Host ""
 }
 
