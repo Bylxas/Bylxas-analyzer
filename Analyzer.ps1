@@ -304,6 +304,7 @@ $knownCheatHashes = @{
     "Hitsonly cracked" = @("70178781df262d02eed0f28c3772e1491524d7dd")
     "Autism Client" = @("ae6f1720b8dc4118c74bd6206dead4344f1280fb", "8c2b66146f6b9c14fba86dfeff3a445128e0de6d", "073213174d247a48d236d07e9fd17b155b053346", "15bd3b0fdeda96189467913b51f4b66c52d04bf6", "9655d6afa952c71b9dfd5e012af1e5ad5db457e1")
     "Doomsday Client" = @("45f736bdad93b5f6786100327a3e40c064bed00e", "e728a9cb2bb5ef12e07d42ed20c8ec5dd23cea0b")
+    "Wurst Client" = @("f0c3aea35823a2ab20f0535c5629e450af6993b8", "ba427ddaf559f27395bcfc827d8a0302722894b9", "44afb665b8bd35f1dba4fa26fa09e6ff154ea0a7", "aae55dd5be012e1d4f506bb40cde12afbcc37280", "7fa4cdd5f8b8b5be0d92afaa66c4adbbe7b2ff00")
 
 }
 
