@@ -129,7 +129,7 @@ $suspiciousPatterns = @(
     "DoubleAnchorModule", "ElytraSwapModule", "FakePayModule", "FakeStatsModule",
     "HoverTotemModule", "LightDebugModule", "MaceBomberModule", "MaceSwapModule",
     "NameProtectModule", "PrimeChunkFinderModule", "ShieldBreakerModule", "SkinProtectModule",
-    "SpawnerProtectModule", "StorageEspModule", "TriggerbotModule"
+    "SpawnerProtectModule", "StorageEspModule", "TriggerbotModule", "donutmacros"
 
 )
 
@@ -282,7 +282,8 @@ $cheatStrings = @(
     "Ｓ．ｔｏｐ　ｏｎ　ｋｉｌｌ", "Ｂ．ｒｅａｋ ｄｅｌａｙ", "Ｂ．ｒｅａｋ　ｄｅｌａｙ", "Ａ．ｉｍ Ａｓｓｉｓｔ", "Ａ．ｉｍ　Ａｓｓｉｓｔ",
     "Ｖ．ｉｓｉｂｉｌｉｔｙ Ｃｈｅｃｋ", "Ｖ．ｉｓｉｂｉｌｉｔｙ　Ｃｈｅｃｋ", "AimTarget", "ＡｉｍＴａｒｇｅｔ", "FLY", "ＦＬＹ", "MaceTpAura",
     "ＭａｃｅＴｐＡｕｒａ", "PearlCatchMacro", "ＰｅａｒｌＣａｔｃｈＭａｃｒｏ", "PingSpoof", "ＰｉｎｇＳｐｏｏｆ", "ThemisNoFall",
-    "ＴｈｅｍｉｓＮｏＦａｌｌ", "SpearMace", "ＳｐｅａｒＭａｃｅ", "ShieldDrain$Target", "ＳｈｉｅｌｄＤｒａｉｎ＄Ｔａｒｇｅｔ"
+    "ＴｈｅｍｉｓＮｏＦａｌｌ", "SpearMace", "ＳｐｅａｒＭａｃｅ", "ShieldDrain$Target", "ＳｈｉｅｌｄＤｒａｉｎ＄Ｔａｒｇｅｔ",
+    "noinvleak", "ｎｏｉｎｖｌｅａｋ"
 
 )
 
@@ -316,6 +317,7 @@ $knownCheatHashes = @{
     "Francium Client" = @("d07b0f10ae2c59fb05501d6ae623f3b4b18bd853", "ba82650c9a4b17032b9ca7513172c9304472b5b3", "8da73a4594d15f9c5a15fbdc902736f6869aa69a", "15ca4e629742f98ed9d4b8d19431fbbc624086f1")
     "Asteria" = @("722bbc22613142a0dab3683b46dcfeb26cccd943", "df35295c8d1e6783ff6bc73d91562249f28b01c0", "cec910c0c648413b2584d57d207b3198e2307262", "56b59e4b542cb049ea52e6e7a0a4963b9ef1e7d9", "a02af93800a8358fdac3baa61188a6e1bd1c37ba")
     "Zenith Client" = @("923678e0731b498a5ecc30db2d1de13dbab589a3", "5c5003a69851e4774c9d4f9c76bb1f699ac29ee2", "3167ea05f6e51631ef8767fbb818055ac5ee396c", "0fe442df22a794290af078d15bc2e166acf250b6", "e67107b3f1cb7e5fd5d8e0de9a874051ac229cdb", "7760e0aa866138c7693e6b581a1407e8ab4ae84a", "5a42b03fb1d8aac85f3021e12e9d7a040fcc1ea7")
+    "Anubis Client" = @("f029129485bb9757127323d116e0e891f47bd5e5", "c4ad9978db5423a9ab16c0337d65de7956495d63", "f9df7b5f134b66f64ba00b78594d1e261fc96eda", "b2d11b36cdfbb487b0c9c7f2224347e7a1ec4eed", "134aa228e2fa0ab1cce55ca41ddb8c6093c4c1fa")
 
 }
 
