@@ -331,6 +331,7 @@ $knownCheatHashes = @{
     "Glazed Addon 1.21.11" = @("8edbe9f3b8806f4ad4e8b90ea9f9050fe8d7dde9", "d9f25bca32dcdf1c2fdb2436fccac74b95f34c66", "fb330cebaae7e485baaab37e199d1cf2d5e35c19")
     "Glazed Addon 26.1.2" = @("5c1d070f385aa40036d902b018b08a9bb8bfb1ec", "0764180a5b1fde455db4760d9b2469986f572e92", "cfea7cb10b767c369bec606c32d45d9446925736", "c47e990ab8b09eedb7be71addccdb173090a93e9")
     "Glazed Addon 26.2" = @("f505b2fa11013ccb6f8abfd4a4b56b06be45e409", "6bfa810387060abb1c4c964d754f18159e860d91", "68bf4d14561fb68d5d3049bbff8d51d701859f11", "bf16ec51ba6dcfea0e51c840125572eb99262979", "9f9137a86d1f3c2502d8e661e7afb54bbf965f11")
+    "PearlCatch (HitsOnly)" = @("98156c214bff7b0c7034d4dcdefcb05d38606b53", "44902294714ec967d58926efb54fe0cd76f3f27b")
 
 }
 
