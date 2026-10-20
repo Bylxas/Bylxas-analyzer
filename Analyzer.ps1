@@ -284,7 +284,8 @@ $cheatStrings = @(
     "ＭａｃｅＴｐＡｕｒａ", "PearlCatchMacro", "ＰｅａｒｌＣａｔｃｈＭａｃｒｏ", "PingSpoof", "ＰｉｎｇＳｐｏｏｆ", "ThemisNoFall",
     "ＴｈｅｍｉｓＮｏＦａｌｌ", "SpearMace", "ＳｐｅａｒＭａｃｅ", "ShieldDrain$Target", "ＳｈｉｅｌｄＤｒａｉｎ＄Ｔａｒｇｅｔ",
     "noinvleak", "ｎｏｉｎｖｌｅａｋ", "Krispy Client", "Ｋｒｉｓｐｙ　Ｃｌｉｅｎｔ", "DONUT", "ＤＯＮＵＴ", "panicPay",
-    "ｐａｎｉｃＰａｙ", "stopBaritone", "ｓｔｏｐＢａｒｉｔｏｎｅ", "DONUT_STAFF", "ＤＯＮＵＴ＿ＳＴＡＦＦ"
+    "ｐａｎｉｃＰａｙ", "stopBaritone", "ｓｔｏｐＢａｒｉｔｏｎｅ", "DONUT_STAFF", "ＤＯＮＵＴ＿ＳＴＡＦＦ", "ＳｅｌｆＤｅｓｔｒｕｃｔ",
+    "AnchorMacro", "ＡｎｃｈｏｒＭａｃｒｏ", "ＫｉｌｌＡｕｒａ", "TriggerBot", "NoFall", "ＮｏＦａｌｌ"
 
 )
 
