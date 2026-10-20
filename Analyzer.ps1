@@ -129,7 +129,7 @@ $suspiciousPatterns = @(
     "DoubleAnchorModule", "ElytraSwapModule", "FakePayModule", "FakeStatsModule",
     "HoverTotemModule", "LightDebugModule", "MaceBomberModule", "MaceSwapModule",
     "NameProtectModule", "PrimeChunkFinderModule", "ShieldBreakerModule", "SkinProtectModule",
-    "SpawnerProtectModule", "StorageEspModule", "TriggerbotModule", "donutmacros"
+    "SpawnerProtectModule", "StorageEspModule", "TriggerbotModule", "donutmacros", "fakeName"
 
 )
 
@@ -283,7 +283,8 @@ $cheatStrings = @(
     "Ｖ．ｉｓｉｂｉｌｉｔｙ Ｃｈｅｃｋ", "Ｖ．ｉｓｉｂｉｌｉｔｙ　Ｃｈｅｃｋ", "AimTarget", "ＡｉｍＴａｒｇｅｔ", "FLY", "ＦＬＹ", "MaceTpAura",
     "ＭａｃｅＴｐＡｕｒａ", "PearlCatchMacro", "ＰｅａｒｌＣａｔｃｈＭａｃｒｏ", "PingSpoof", "ＰｉｎｇＳｐｏｏｆ", "ThemisNoFall",
     "ＴｈｅｍｉｓＮｏＦａｌｌ", "SpearMace", "ＳｐｅａｒＭａｃｅ", "ShieldDrain$Target", "ＳｈｉｅｌｄＤｒａｉｎ＄Ｔａｒｇｅｔ",
-    "noinvleak", "ｎｏｉｎｖｌｅａｋ"
+    "noinvleak", "ｎｏｉｎｖｌｅａｋ", "Krispy Client", "Ｋｒｉｓｐｙ　Ｃｌｉｅｎｔ", "DONUT", "ＤＯＮＵＴ", "panicPay",
+    "ｐａｎｉｃＰａｙ", "stopBaritone", "ｓｔｏｐＢａｒｉｔｏｎｅ", "DONUT_STAFF", "ＤＯＮＵＴ＿ＳＴＡＦＦ"
 
 )
 
