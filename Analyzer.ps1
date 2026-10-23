@@ -289,7 +289,8 @@ $cheatStrings = @(
     "AnchorMacro", "ＡｎｃｈｏｒＭａｃｒｏ", "ＫｉｌｌＡｕｒａ", "TriggerBot", "NoFall", "ＮｏＦａｌｌ", "Auto*crystal",
     "Ａｕｔｏ＊ｃｒｙｓｔａｌ", "PrimeChunkFinder", "ＰｒｉｍｅＣｈｕｎｋＦｉｎｄｅｒ", "RTPBaseFinder", "ＲＴＰＢａｓｅＦｉｎｄｅｒ",
     "SeedChunkFinder", "ＳｅｅｄＣｈｕｎｋＦｉｎｄｅｒ", "SusChunkFinder", "ＳｕｓＣｈｕｎｋＦｉｎｄｅｒ", "MaceBomber",
-    "ＭａｃｅＢｏｍｂｅｒ"
+    "ＭａｃｅＢｏｍｂｅｒ", "StaffAlarm", "ＳｔａｆｆＡｌａｒｍ", "Staffalarm", "Ｓｔａｆｆａｌａｒｍ", "staffalarm",
+    "ｓｔａｆｆａｌａｒｍ", "killaura", "ｋｉｌｌａｕｒａ"
 
 )
 
