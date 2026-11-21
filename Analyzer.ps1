@@ -340,6 +340,7 @@ $knownCheatHashes = @{
     "PearlCatch (HitsOnly)" = @("98156c214bff7b0c7034d4dcdefcb05d38606b53", "44902294714ec967d58926efb54fe0cd76f3f27b")
     "Gundi Client 1.21.11" = @("b40438dd91e4fc0a601e5da98c7edc842a7b1710", "786e422afe5d0cf4fa1fa7b3ee5c5f1dc0d65608", "8a989c6385910a9b2a89e9ad7f4410de7c6af7eb")
     "Gundi Client 1.21.4" = @("74f2aaf0ed5dcc0bb99712ffd1593aa7b8790339", "ea7787021f3f9ae99063bcefa6399e244c728c10", "769b37a630f5684614e7f38d9557da58ffc94916")
+    "Kova Client" = @("337020e525b7c86b553154a24dfe2a65daf7eec5", "a8a1b137b13a96be3e762bef7b3da438bcecaf2f", "8e3c10133d918f4dc1c032d7712b68a730633c56")
 
 }
 
