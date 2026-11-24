@@ -344,6 +344,7 @@ $knownCheatHashes = @{
     "Anubis Beta 9.9.3" = @("4b8ed94c09e969652fc3735f485783a341ebab21", "a654c4ca96b819d74c23a4a6eb0503f8ac6c600e", "7f6a4a1aeb3e0a424ebf708e97d41ad3956a197f")
     "KrispyClient" = @("2cee36adcc2c5adffb3db6b69c7fc282b9c47928", "d3509b8ae70c168872f1d1d53bf97830d025e057", "2c537b0fd88a31aeff806be7479e38618d3697ca")
     "NexonClient" = @("88517dba86a6d9301be0a6ab3117a1a240e97beb", "44fe04bcdf56a52f13ffa66c7a67c3c0716d3417", "fc84b01b0b8bdeae8adc2acf2b47f89722379869")
+    "Plutora Client" = @("656f20f667bd38c0df55b0acaae744bae0334185", "04c033461f647575d5de2cd1f20a2c200a9d33cf")
 
 }
 
