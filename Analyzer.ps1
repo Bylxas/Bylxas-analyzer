@@ -346,6 +346,7 @@ $knownCheatHashes = @{
     "NexonClient" = @("88517dba86a6d9301be0a6ab3117a1a240e97beb", "44fe04bcdf56a52f13ffa66c7a67c3c0716d3417", "fc84b01b0b8bdeae8adc2acf2b47f89722379869")
     "Plutora Client" = @("656f20f667bd38c0df55b0acaae744bae0334185", "04c033461f647575d5de2cd1f20a2c200a9d33cf")
     "Mizu Client" = @("99a2fa42f187888d828b1e1bf1392a18ff09f844", "210afb937c32ca8e39328cfa264c89fbd36fc73b", "2ac3d44071e9d507d091d90822e9ddd306174543")
+    "Kuzi Client" = @("eb9d4f33a244f7cc2b97dc6fa14b355f3a095cdd", "18027157eb7ecb7c0ee890741ab24738508bc22c")
 
 }
 
